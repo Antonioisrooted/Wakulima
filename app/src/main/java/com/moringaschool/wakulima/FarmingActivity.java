@@ -10,11 +10,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
     public class FarmingActivity extends AppCompatActivity {
-        TextView mLocationTextView;
-        ListView mListView;
+        //TextView mLocationTextView;
+        //ListView mListView;
+        @BindView(R.id.locationTextView) TextView mLocationTextView;
+        @BindView(R.id.listView) ListView mListView;
 
         private String[] restaurants = new String[] {"Poultry Farming", "Cow Farming", "Goat Farming", "Pig Farming" };
         private String[] cuisines = new String[] {"Layers", "Dairy Cattle", "Dairy Goats", "Breeding Pigs"};
@@ -33,7 +36,8 @@ import butterknife.ButterKnife;
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     String restaurant = ((TextView)view).getText().toString();
-                    Toast.makeText(FarmingActivity.this, restaurant, Toast.LENGTH_LONG).show();
+
+                    Toast.makeText(FarmingActivity.this, cuisines[i], Toast.LENGTH_LONG).show();
                 }
             });
 
