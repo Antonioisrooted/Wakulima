@@ -10,14 +10,13 @@ tools:context="com.moringaschool.wakulima.FarmingActivity">
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/background2" />
+        android:src="@drawable/background3" />
 
     <TextView
         android:id="@+id/locationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:text="@string/restaurants_near"
         android:textColor="@color/colorTextIcons"
         android:textSize="18sp" />
@@ -26,6 +25,7 @@ tools:context="com.moringaschool.wakulima.FarmingActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
+        android:textColor="@color/colorTextIcons"
         android:layout_below="@+id/locationTextView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
