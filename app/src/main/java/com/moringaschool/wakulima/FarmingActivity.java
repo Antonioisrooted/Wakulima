@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
         ListView mListView;
 
         private String[] restaurants = new String[] {"Poultry", };
-        private String[] cuisines = new String[] {"Vegan Food", "Breakfast", "Fishs Dishs", "Scandinavian", "Coffee", "English Food", "Burgers", "Fast Food", "Noodle Soups", "Mexican", "BBQ", "Cuban", "Bar Food", "Sports Bar", "Breakfast", "Mexican" };
+        private String[] cuisines = new String[] {"Layers", ""};
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 
             LearnFarmingArrayAdapter adapter = new LearnFarmingArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants, cuisines); // must match constructor!
 
-//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants);
+//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, farming);
             mListView.setAdapter(adapter);
 
             mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -41,6 +41,6 @@ import butterknife.ButterKnife;
             Intent intent = getIntent();
             String location = intent.getStringExtra("location");
 
-            mLocationTextView.setText("Here are all the restaurants near: " + location);
+            mLocationTextView.setText("Lets take a deep dive: " + location);
         }
     }
