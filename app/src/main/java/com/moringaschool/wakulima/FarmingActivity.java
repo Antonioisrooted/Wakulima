@@ -19,8 +19,8 @@ import butterknife.ButterKnife;
         @BindView(R.id.locationTextView) TextView mLocationTextView;
         @BindView(R.id.listView) ListView mListView;
 
-        private String[] restaurants = new String[] {"Poultry Farming", "Cow Farming", "Goat Farming", "Pig Farming" };
-        private String[] cuisines = new String[] {"Layers", "Dairy Cattle", "Dairy Goats", "Breeding Pigs"};
+        private String[] restaurants = new String[] {"Poultry Farming", "Cow Farming", "Goat Farming", "Pig Farming", "Sheep Farming"};
+        private String[] cuisines = new String[] {"Layers", "Dairy Cattle", "Dairy Goats", "Breeding Pigs", "Sheep Breeding"};
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
