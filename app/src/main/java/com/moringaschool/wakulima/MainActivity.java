@@ -9,13 +9,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button mFindRestaurantsButton;
-    EditText mLocationEditText;
+    //Button mFindRestaurantsButton;
+    //EditText mLocationEditText;
     TextView mAppNameTextView;
-
+    @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
+    @BindView(R.id.locationEditText)
+    EditText mLocationEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
