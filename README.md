@@ -1,11 +1,20 @@
-# Project Title
-  Wakulima.
+# Wakulima.
 
-An app that teaches farmers how to do farming.
+An app that helps farmers by teaching them the latest form of farming which helps to cut down there expenditure and increase there production rate hence increasing there profits.
+
+Android Wakulima is currently under heavy development. Note that some changes (such as database schema modifications) are not backwards compatible and may cause the app to crash. In this case, please uninstall and re-install the app.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+This project uses the Gradle build system. To build this project, use the gradlew build command or use "Import Project" in Android Studio.
+
+There are two Gradle tasks for testing the project:
+
+connectedAndroidTest - for running Espresso on a connected device
+test - for running unit tests
+For more resources on learning Android development, visit the Developer Guides at developer.android.com.
 
 ### Prerequisites
 
