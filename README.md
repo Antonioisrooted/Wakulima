@@ -67,7 +67,9 @@ Publications
 ## Support
 
 Stack Overflow:
+
 http://stackoverflow.com/questions/tagged/android
+
 http://stackoverflow.com/questions/tagged/android-jetpack
 
 ## Built With
