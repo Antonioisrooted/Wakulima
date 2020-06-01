@@ -25,6 +25,7 @@ For more resources on learning Android development, visit the Developer Guides a
   .AppCompat - Degrade gracefully on older versions of Android.
   .Android KTX - Write more concise, idiomatic Kotlin code.
   .Test - An Android testing framework for unit and runtime UI tests.
+  
 
 ### Prerequisites
 
