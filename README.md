@@ -23,7 +23,9 @@ For more resources on learning Android development, visit the Developer Guides a
 ## Libraries used
 .Foundation - Components for core system capabilities, Kotlin extensions and support for multidex and automated testing.
   .AppCompat - Degrade gracefully on older versions of Android.
+  
   .Android KTX - Write more concise, idiomatic Kotlin code.
+  
   .Test - An Android testing framework for unit and runtime UI tests.
   
 
