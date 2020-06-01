@@ -28,56 +28,47 @@ For more resources on learning Android development, visit the Developer Guides a
   
   .Test - An Android testing framework for unit and runtime UI tests.
   
+.Architecture - A collection of libraries that help you design robust, testable, and maintainable apps. Start with classes for managing your UI component lifecycle and handling data persistence.
 
-### Prerequisites
+.UI - Details on why and how to use UI Components in your apps - together or separate
+  .Animations & Transitions - Move widgets and transition between screens.
+  
+  .Fragment - A basic unit of composable UI.
+  
+  .Layout - Lay out widgets using different algorithms.
+  
+.Third party
+  .Glide for image loading
+  
+  .Kotlin Coroutines for managing background threads with simplified code and reducing needs for callbacks
+  
+## Android Studio IDE setup
 
-What things you need to install the software and how to install them
+For development, the latest version of Android Studio is required. The latest version can be downloaded from here.
 
-```
-Android Studio
-```
+Wakulima uses ktlint to enforce Kotlin coding styles. Here's how to configure it for use with Android Studio (instructions adapted from the ktlint README):
 
-### Installing
+Close Android Studio if it's open
 
-A step by step series of examples that tell you how to get a development env running
+Download ktlint using these installation instructions
 
-Say what the step will be
+Apply ktlint settings to Android Studio using these instructions
 
-```
-xxx
-```
+Start Android Studio
 
-And repeat
+## Additional resources
 
-```
-until finished
-```
+Check out these Wiki pages to learn more about Android Wakulima:
 
-End with an example of getting some data out of the system or using it for a little demo
+Notable Community Contributions
 
-## Running the tests
+Publications
 
-Explain how to run the automated tests for this system
+## Support
 
-### xxx
-
-Explain what these tests test and why
-
-```
-xxx
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-xxx
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+Stack Overflow:
+http://stackoverflow.com/questions/tagged/android
+http://stackoverflow.com/questions/tagged/android-jetpack
 
 ## Built With
 
@@ -85,19 +76,11 @@ Add additional notes about how to deploy this on a live system
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/xxx) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/xxx) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
 Antonio Maina
 
-See also the list of [contributors](https://github.com/your/project/contributors xxxx) who participated in this project.
+(https://github.com/Antonioisrooted/Wakulima) 
 
 ## License
 
