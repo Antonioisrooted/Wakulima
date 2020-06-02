@@ -6,6 +6,12 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    buildTypes.each {
+        it.buildConfigField 'String', 'GOV_API_KEY', GovApiKey
+    }
+
+}
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -28,7 +34,7 @@ android {
         }
     }
 
-}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -40,16 +46,19 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     testImplementation "org.robolectric:robolectric:3.8"
     androidTestImplementation 'androidx.test:rules:1.2.0'
-//    androidTestImplementation 'androidx.test:runner:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     annotationProcessor 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
     implementation "androidx.core:core-ktx:1.2.0"
-
-//    implementation 'com.android.support:appcompat-v7:27.1.1'
-
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.jakewharton:butterknife:9.0.0-rc1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'se.akerfeldt:okhttp-signpost:1.1.0'
+
+//    implementation 'com.android.support:appcompat-v7:27.1.1'
+//    androidTestImplementation 'androidx.test:runner:1.2.1'
 }
 repositories {
     mavenCentral()
