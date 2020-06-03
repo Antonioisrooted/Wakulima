@@ -1,7 +1,7 @@
 package com.moringaschool.wakulima.service;
 
 import com.moringaschool.wakulima.Constants;
-import com.moringaschool.wakulima.Farming;
+import com.moringaschool.wakulima.AvailableAnimals;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,8 +27,8 @@ public class AnimalServices {
 
     }
 
-    public ArrayList<Farming> processResults(Response response) {
-        ArrayList<Farming> animals = new ArrayList<>();
+    public ArrayList<AvailableAnimals> processResults(Response response) {
+        ArrayList<AvailableAnimals> animals = new ArrayList<>();
         try {
 
             String jsonData = response.body().string();
@@ -43,7 +43,7 @@ public class AnimalServices {
                     String image = farmingJSON.getString("image");
                     String description = farmingJSON.getString("description");
 
-                    Farming farming = new Farming(type, breed, image, description);
+                    AvailableAnimals farming = new AvailableAnimals(type, breed, image, description);
 
                     animals.add(farming);
                 }

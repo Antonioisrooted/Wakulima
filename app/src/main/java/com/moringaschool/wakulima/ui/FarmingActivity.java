@@ -1,14 +1,12 @@
 package com.moringaschool.wakulima.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.wakulima.AnimalApi;
@@ -21,9 +19,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FarmingActivity extends AppCompatActivity {
     private static final String TAG = FarmingActivity.class.getSimpleName();
@@ -46,7 +44,7 @@ public class FarmingActivity extends AppCompatActivity {
 
         AnimalApi client = AnimalClient.getClient();
 
-        Call<List<Farming>> call = client.getAnimals();
+        Call<List<Farming>> call=client.getAnimals();
 
         call.enqueue(new Callback<List<Farming>>() {
             @Override
@@ -55,28 +53,20 @@ public class FarmingActivity extends AppCompatActivity {
 
                 if (response.isSuccessful()) {
                     farming = response.body();
+                    mAdapter = new FarmingArrayAdapter(FarmingActivity.this, farming);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(FarmingActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
+                    showAnimals();
 
-                    for (int i = 0; i < restaurants.length; i++){
-                        restaurants[i] = restaurantsList.get(i).getName();
-                    }
-
-                    for (int i = 0; i < categories.length; i++) {
-                        Category category = restaurantsList.get(i).getCategories().get(0);
-                        categories[i] = category.getTitle();
-                    }
-
-                    ArrayAdapter adapter
-                            = new LearnFarmingArrayAdapter(FarmingActivity.this, android.R.layout.simple_list_item_1, restaurants, categories);
-                    mListView.setAdapter(adapter);
-
-                    showRestaurants();
                 } else {
                     showUnsuccessfulMessage();
                 }
             }
 
             @Override
-            public void onFailure(Call<GovBusinessesSearchResponse> call, Throwable t) {
+            public void onFailure(Call<List<Farming>> call, Throwable t) {
                 hideProgressBar();
                 showFailureMessage();
             }
@@ -94,9 +84,8 @@ public class FarmingActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
-    private void showRestaurants() {
-        mListView.setVisibility(View.VISIBLE);
-        mLocationTextView.setVisibility(View.VISIBLE);
+    private void showAnimals() {
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {

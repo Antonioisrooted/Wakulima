@@ -1,51 +1,85 @@
 package com.moringaschool.wakulima;
 
-public class Farming {
-    private String mType;
-    private String mBreed;
-    private String mImage;
-    private String mDescription;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
+public class Farming {
+    @SerializedName("id")
+    @Expose
+    private int id;
+    @SerializedName("type")
+    @Expose
+    private String type;
+    @SerializedName("breed")
+    @Expose
+    private String breed;
+    @SerializedName("image")
+    @Expose
+    private String image;
+    @SerializedName("description")
+    @Expose
+    private String description;
 
     public Farming() {
     }
 
-    public Farming(String mType, String mBreed, String mImage, String mDescription) {
-        this.mType = mType;
-        this.mBreed = mBreed;
-        this.mImage = mImage;
-        this.mDescription = mDescription;
+    /**
+     * @param id
+     * @param type
+     * @param breed
+     * @param image
+     * @param description
+     */
+
+    public Farming(int id, String type, String breed, String image, String description) {
+        this.id = id;
+        this.type = type;
+        this.breed = breed;
+        this.image = image;
+        this.description = description;
     }
 
-    public String getmType() {
-        return mType;
+    public int getId() {
+        return id;
     }
 
-    public void setmType(String mType) {
-        this.mType = mType;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getmBreed() {
-        return mBreed;
+    public String getType() {
+        return type;
     }
 
-    public void setmBreed(String mBreed) {
-        this.mBreed = mBreed;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getmImage() {
-        return mImage;
+    public String getBreed() {
+        return breed;
     }
 
-    public void setmImage(String mImage) {
-        this.mImage = mImage;
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 
-    public String getmDescription() {
-        return mDescription;
+    public String getImage() {
+        return image;
     }
 
-    public void setmDescription(String mDescription) {
-        this.mDescription = mDescription;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
