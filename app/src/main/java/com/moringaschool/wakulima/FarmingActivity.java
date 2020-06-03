@@ -1,5 +1,10 @@
 package com.moringaschool.wakulima;
 
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
     public class FarmingActivity extends AppCompatActivity {
+        public static final String TAG = FarmingActivity.class.getSimpleName();
         //TextView mLocationTextView;
         //ListView mListView;
         @BindView(R.id.locationTextView) TextView mLocationTextView;
@@ -38,7 +44,9 @@ import butterknife.ButterKnife;
                     String restaurant = ((TextView)view).getText().toString();
 
                     Toast.makeText(FarmingActivity.this, cuisines[i], Toast.LENGTH_LONG).show();
-                }
+                        getRestaurants(location);
+                    }
+
             });
 
             Intent intent = getIntent();
@@ -46,4 +54,25 @@ import butterknife.ButterKnife;
 
             mLocationTextView.setText("Lets take a deep dive: " + location);
         }
+
+    private void getRestaurants(String location) {
+        final GovServices govServices = new GovServices();
+        govServices.findRestaurants(location, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    String jsonData = response.body().string();
+                    Log.v(TAG, jsonData);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
+}
