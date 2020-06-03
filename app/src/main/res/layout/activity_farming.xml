@@ -3,14 +3,36 @@
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="com.moringaschool.wakulima.FarmingActivity">
+tools:context="com.moringaschool.wakulima.ui.FarmingActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/background3" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listView"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:textColor="@color/colorTextIcons"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background3" />
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
     <TextView
         android:id="@+id/locationTextView"
@@ -21,13 +43,6 @@ tools:context="com.moringaschool.wakulima.FarmingActivity">
         android:textColor="@color/colorTextIcons"
         android:textSize="18sp" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:textColor="@color/colorTextIcons"
-        android:layout_below="@+id/locationTextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
+

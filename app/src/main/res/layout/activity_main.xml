@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
     android:background="#000000">
 
     <ImageView
@@ -26,22 +26,12 @@
         android:textSize="50sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/locationEditText"
-        android:background="@color/colorTextIcons"
-        android:layout_above="@+id/findRestaurantsButton"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp"
-        android:hint="Enter Zip Code"
-        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Learn Farming"
-        android:id="@+id/findRestaurantsButton"
+        android:id="@+id/findAnimalsButton"
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:layout_alignParentBottom="true"

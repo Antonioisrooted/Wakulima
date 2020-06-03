@@ -1,39 +1,34 @@
-package com.moringaschool.wakulima;
+package com.moringaschool.wakulima.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.moringaschool.wakulima.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    //Button mFindRestaurantsButton;
-    //EditText mLocationEditText;
-    TextView mAppNameTextView;
-    @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
-    @BindView(R.id.locationEditText)
-    EditText mLocationEditText;
+
+    @BindView(R.id.findAnimalsButton) Button mFindAnimalsButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mFindRestaurantsButton.setOnClickListener(this);
+        mFindAnimalsButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v == mFindRestaurantsButton) {
-            String location = mLocationEditText.getText().toString();
+        if(v == mFindAnimalsButton) {
             Intent intent = new Intent(MainActivity.this, FarmingActivity.class);
-            intent.putExtra("location", location);
             startActivity(intent);
         }
     }

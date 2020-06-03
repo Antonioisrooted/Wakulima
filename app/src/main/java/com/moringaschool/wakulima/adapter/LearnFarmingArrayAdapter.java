@@ -1,4 +1,4 @@
-package com.moringaschool.wakulima;
+package com.moringaschool.wakulima.adapter;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
