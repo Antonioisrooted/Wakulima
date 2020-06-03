@@ -1,10 +1,10 @@
 package com.moringaschool.wakulima;
 
 public class AvailableAnimals {
-    private String mType;
-    private String mBreed;
-    private String mImage;
-    private String mDescription;
+    public String mType;
+    public String mBreed;
+    public String mImage;
+    public String mDescription;
 
 
     public AvailableAnimals() {

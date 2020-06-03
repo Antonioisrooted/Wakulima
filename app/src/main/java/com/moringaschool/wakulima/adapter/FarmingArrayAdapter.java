@@ -1,6 +1,7 @@
 package com.moringaschool.wakulima.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.wakulima.Farming;
 import com.moringaschool.wakulima.R;
+import com.moringaschool.wakulima.ui.AnimalDetails;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -46,7 +50,7 @@ public class FarmingArrayAdapter extends RecyclerView.Adapter<FarmingArrayAdapte
         return mFarming.size();
     }
 
-    public class farmingViewHolder extends RecyclerView.ViewHolder{
+    public class farmingViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.typeTextView)
         TextView mType;
         @BindView(R.id.breedTextView)
@@ -59,11 +63,20 @@ public class FarmingArrayAdapter extends RecyclerView.Adapter<FarmingArrayAdapte
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
         }
         public void bindFarming(Farming farming){
             mType.setText(farming.getType());
             mBreed.setText(farming.getBreed());
             Picasso.get().load(farming.getImage()).into(mImage);
+        }
+        @Override
+        public void onClick(View v){
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent (mContext, AnimalDetails.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("animals", Parcels.wrap(mFarming));
+            mContext.startActivity(intent);
         }
     }
 }
