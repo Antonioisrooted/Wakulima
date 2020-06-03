@@ -3,12 +3,12 @@ package com.moringaschool.wakulima.adapter;
 import android.content.Context;
 import android.widget.ArrayAdapter;
 
-class LearnFarmingArrayAdapter extends ArrayAdapter {
+public class FarmingArrayAdapter extends ArrayAdapter {
     private String[] mRestaurants;
     private String[] mCuisines;
     private Context mContext;
 
-    public LearnFarmingArrayAdapter(Context mContext, int resource, String[] mRestaurants, String[] mCuisines) {
+    public FarmingArrayAdapter(Context mContext, int resource, String[] mRestaurants, String[] mCuisines) {
         super(mContext, resource);
         this.mRestaurants = mRestaurants;
         this.mCuisines = mCuisines;

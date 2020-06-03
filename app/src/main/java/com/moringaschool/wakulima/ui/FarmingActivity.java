@@ -4,16 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.wakulima.AnimalApi;
-import com.moringaschool.wakulima.service.AnimalClient;
+import com.moringaschool.wakulima.Farming;
 import com.moringaschool.wakulima.R;
+import com.moringaschool.wakulima.adapter.FarmingArrayAdapter;
+import com.moringaschool.wakulima.service.AnimalClient;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,11 +28,14 @@ import okhttp3.Response;
 public class FarmingActivity extends AppCompatActivity {
     private static final String TAG = FarmingActivity.class.getSimpleName();
 
-    @BindView(R.id.locationTextView) TextView mLocationTextView;
-    @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+
+    public List<Farming>farming;
+
+    private FarmingArrayAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,31 +43,18 @@ public class FarmingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_farming);
         ButterKnife.bind(this);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String restaurant = ((TextView)view).getText().toString();
-                Toast.makeText(FarmingActivity.this, restaurant, Toast.LENGTH_LONG).show();
-            }
-        });
-
-        Intent intent = getIntent();
-        String location = intent.getStringExtra("location");
-        mLocationTextView.setText("Here are all the restaurants near: " + location);
 
         AnimalApi client = AnimalClient.getClient();
 
-        Call<GovBusinessesSearchResponse> call = client.getRestaurants(location, "restaurants");
+        Call<List<Farming>> call = client.getAnimals();
 
-        call.enqueue(new Callback<GovBusinessesSearchResponse>() {
+        call.enqueue(new Callback<List<Farming>>() {
             @Override
-            public void onResponse(Call<GovBusinessesSearchResponse> call, Response<GovBusinessesSearchResponse> response) {
+            public void onResponse(Call<List<Farming>> call, Response<List<Farming>> response) {
                 hideProgressBar();
 
                 if (response.isSuccessful()) {
-                    List<Business> restaurantsList = response.body().getBusinesses();
-                    String[] restaurants = new String[restaurantsList.size()];
-                    String[] categories = new String[restaurantsList.size()];
+                    farming = response.body();
 
                     for (int i = 0; i < restaurants.length; i++){
                         restaurants[i] = restaurantsList.get(i).getName();

@@ -56,6 +56,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'se.akerfeldt:okhttp-signpost:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
 
 //    implementation 'com.android.support:appcompat-v7:27.1.1'
