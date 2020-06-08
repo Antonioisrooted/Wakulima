@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId "com.moringaschool.wakulima"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -58,6 +58,45 @@ dependencies {
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+
+    //Robolectric dependencies
+    testImplementation "org.robolectric:robolectric:3.8"
+
+    //Espresso dependencies
+    androidTestImplementation "com.android.support.test:rules:1.0.2"
+
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    //RecylcerView
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+    // Picasso image processing
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //parceler
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+
+    //Add firebase SDK
+    implementation 'com.google.firebase:firebase-core:16.0.7'
+
+    //    firbase
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+    //    firebase
+    implementation 'com.google.firebase:firebase-database:17.0.0'
+
+    //    firebase recycler
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+
+    //    auth
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
 
 
 //    implementation 'com.android.support:appcompat-v7:27.1.1'
@@ -66,3 +105,4 @@ dependencies {
 repositories {
     mavenCentral()
 }
+apply plugin: 'com.google.gms.google-services'
