@@ -89,7 +89,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="?android:attr/textColorPrimaryNoDisable"
-        android:text="Register"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
@@ -100,7 +100,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/colorTextIcons"
-        android:text="Login"
+        android:text="Go to create account"
+        android:padding="10dp"
         android:textColor="@color/colorPrimaryText"
         android:textColorHint="@color/colorPrimaryText"
         android:textSize="18sp"
