@@ -3,15 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.MainActivity"><![CDATA[
     android:background="#000000">
 
+
+
+
+
+    ]]>
+
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/imageView"
-        android:src="@drawable/background1"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/background1" />
 
     <TextView
         android:id="@+id/appNameTextView"
@@ -28,14 +34,15 @@
 
 
     <Button
+        android:id="@+id/findAnimalsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Learn Farming"
-        android:id="@+id/findAnimalsButton"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorTextIcons"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="2dp"
+        android:background="@color/colorAccent"
+        android:text="Learn Farming"
+        android:textColor="@color/colorTextIcons" />
+
 
 
 </RelativeLayout>

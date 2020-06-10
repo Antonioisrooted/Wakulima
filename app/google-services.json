@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "17460954054",
-    "firebase_url": "https://wakulima-63271.firebaseio.com",
-    "project_id": "wakulima-63271",
-    "storage_bucket": "wakulima-63271.appspot.com"
+    "project_number": "477837930046",
+    "firebase_url": "https://wakulima-43446.firebaseio.com",
+    "project_id": "wakulima-43446",
+    "storage_bucket": "wakulima-43446.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:17460954054:android:8ad1f2f9b4e7639c1ce8c7",
+        "mobilesdk_app_id": "1:477837930046:android:a8d5cb6c9003c81fceab6f",
         "android_client_info": {
           "package_name": "com.moringaschool.wakulima"
         }
       },
       "oauth_client": [
         {
-          "client_id": "17460954054-popj6kgk8adc7cbb6vle6fmma95e4ss5.apps.googleusercontent.com",
+          "client_id": "477837930046-fkudjn017k1jfncnkig6fc2hqj7pabms.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB2qdNlmWy9FrtOWvlS7A-U0UfDaK0zH70"
+          "current_key": "AIzaSyD_Yubxy20Chn1rDVD8ZNHn_F0r9GjGHiA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "17460954054-popj6kgk8adc7cbb6vle6fmma95e4ss5.apps.googleusercontent.com",
+              "client_id": "477837930046-fkudjn017k1jfncnkig6fc2hqj7pabms.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
