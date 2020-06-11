@@ -19,10 +19,17 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.moringaschool.wakulima.ui.MainActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Register extends AppCompatActivity {
-    EditText mFullName, mEmail, mPassword, mPhone;
-    Button mRegistrationBtn;
-    TextView mLoginBtn;
+    @BindView(R.id.fullName) EditText mFullName;
+    @BindView(R.id.password) EditText mPassword;
+    @BindView(R.id.Email) EditText mEmail;
+    @BindView(R.id.phone) EditText mPhone;
+    @BindView(R.id.registration) Button mRegistrationBtn;
+    @BindView(R.id.createText) TextView mLoginBtn;
+
     FirebaseAuth fAuth;
     ProgressBar progressBar;
 
@@ -31,12 +38,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mFullName = findViewById(R.id.fullName);
-        mEmail = findViewById(R.id.Email);
-        mPassword = findViewById(R.id.password);
-        mPhone = findViewById(R.id.phone);
-        mRegistrationBtn = findViewById(R.id.registration);
-        mLoginBtn = findViewById(R.id.createText);
+        ButterKnife.bind(this);
 
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
@@ -91,7 +93,8 @@ public class Register extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                finish();
             }
         });
     }

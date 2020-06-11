@@ -31,12 +31,12 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mEmail = findViewById(R.id.Email);
-        mPassword = findViewById(R.id.password);
-        progressBar = findViewById(R.id.progressBar);
+        mEmail = findViewById(R.id.Email_l);
+        mPassword = findViewById(R.id.password_l);
+        progressBar = findViewById(R.id.progressBar2);
         fAuth = FirebaseAuth.getInstance();
-        mLoginBtn = findViewById(R.id.loginBtn);
-        mCreateBtn = findViewById(R.id.createText);
+        mLoginBtn = findViewById(R.id.loginBtn_l);
+        mCreateBtn = findViewById(R.id.createText_l);
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

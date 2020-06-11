@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        android:name=".Wakulima"
         <activity android:name=".Login"></activity>
         <activity android:name=".Register">
             <intent-filter>
