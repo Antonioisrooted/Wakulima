@@ -7,12 +7,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.moringaschool.wakulima.Login;
 import com.moringaschool.wakulima.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.button) Button mbutton;
 
     @BindView(R.id.findAnimalsButton) Button mFindAnimalsButton;
 
@@ -21,6 +23,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLogOut = new Intent(MainActivity.this, Login.class);
+                startActivity(intentLogOut);
+            }
+        });
 
         mFindAnimalsButton.setOnClickListener(this);
     }
@@ -32,4 +42,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
     }
+
 }
